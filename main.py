@@ -50,10 +50,13 @@ def join_duplicates(contacts_list):
                     i[5] = k[5]
                 if i[6] == '':
                     i[6] = k[6]
-    contacts_list_updated = list()
+
+    d = {}
     for contact in contacts_list:
-        if contact not in contacts_list_updated:
-            contacts_list_updated.append(contact)
+        d[contact[0]] = contact
+    contacts_list_updated = []
+    for v in d.values():
+        contacts_list_updated.append(v)
     return contacts_list_updated
 
 
